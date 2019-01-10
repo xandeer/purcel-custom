@@ -16,6 +16,8 @@
 
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))
+;; which overrides the default "-c" (execute the following command). The addition of "-i" forces the shell into interactive mode, which leads to the sourcing of ~/.bashrc, ~/.zshrc, etc.
+(setq shell-command-switch "-ic")
 
 
 ;; before require neotree
