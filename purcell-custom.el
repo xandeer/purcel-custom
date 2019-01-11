@@ -30,6 +30,7 @@
 (require-package 'projectile)
 (require-package 'general)
 (require-package 'telephone-line)
+(require-package 'evil-surround)
 
 
 (sanityinc/enable-ivy-flx-matching)
