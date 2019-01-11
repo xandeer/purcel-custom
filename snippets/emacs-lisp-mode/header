@@ -1,0 +1,23 @@
+# -*- mode: snippet; -*-
+#name: package header
+#key: header
+# --
+;;; ${1:name}.el --- ${2:summary}
+
+;; Author: ${3:`(user-full-name)`}
+;; Maintainer: ${4:`(user-full-name)`}
+;; Version: 0.1
+;; Package-Requires: (${5:dependencies})
+;; Homepage: https://github.com/xandeer/purcell-custom
+
+;;; Commentary:
+
+;; ${6:commentary}
+
+;;; Code:
+
+${7:(message "Hello World!")}
+
+(provide '$1)
+
+;;; $1.el ends here
