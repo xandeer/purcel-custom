@@ -16,6 +16,7 @@
 (require-package 'linum-relative)
 (require-package 'telephone-line)
 (require-package 'git-gutter)
+(require-package 'fill-column-indicator)
 
 (set-face-attribute 'default nil :height 165)
 (load-theme 'atom-one-dark)
