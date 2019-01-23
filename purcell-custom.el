@@ -20,23 +20,19 @@
 ;; stop creating #autosave# files
 (setq auto-save-default nil)
 
-(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin:/Library/TeX/texbin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))
 ;; which overrides the default "-c" (execute the following command). The addition of "-i" forces the shell into interactive mode, which leads to the sourcing of ~/.bashrc, ~/.zshrc, etc.
 (setq shell-command-switch "-ic")
 
-
 (require-package 'general)
 
-
 (sanityinc/enable-ivy-flx-matching)
-
 
 (general-define-key
  :keymaps 'override
  "M-;" 'shell-command
  "s-;" 'comment-line)
-
 
 (require 'style-custom)
 (require 'evil-custom)
@@ -44,9 +40,10 @@
 (require 'neotree-custom)
 (require 'projectile-custom)
 
+(require 'org-custom)
+
 (require 'js-custom)
 (require 'kotlin-custom)
-
 
 (provide 'purcell-custom)
 
