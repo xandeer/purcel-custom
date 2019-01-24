@@ -26,8 +26,7 @@
   "If current line is epty, call `previous-line'."
   (when (looking-at-p "^$")
     (previous-line)))
-(unless (version< emacs-version "24.4")
-  '(advice-add #'end-of-buffer #'evil-custom-end-of-buffer-dwim))
+(advice-add #'end-of-buffer :after #'evil-custom-end-of-buffer-dwim)
 
 (general-imap
   "C-a" 'beginning-of-line-text
