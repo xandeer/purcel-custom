@@ -35,6 +35,7 @@
 (setq telephone-line-evil-use-short-tag nil)
 (telephone-line-mode 1)
 
+(set-default 'fill-column 80)
 
 (provide 'style-custom)
 ;; Local Variables:
