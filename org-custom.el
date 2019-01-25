@@ -11,10 +11,12 @@
 
 ;;; Code:
 
-(setq org-agenda-files '("/Users/kevin/Library/Mobile Documents/9CR7T2DMDG~com~ngocluu~onewriter/Documents/todo.org"))
+(setq org-agenda-files '("~/Dropbox/notes/todo.org"))
 
 (require-package 'general)
 (general-def org-mode-map
+  "C-c p" 'org-previous-visible-heading
+  "C-c n" 'org-next-visible-heading
   "C-c b" 'org-switchb
   "M-h" 'org-insert-subheading)
 
@@ -25,6 +27,15 @@
 
 
 (setq org-M-RET-may-split-line '((headline) (default . t)))
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "|" "DELEGATE(e)" "DONE(d)")
+        (sequence "BUGS(b)" "|" "FIXED(f)" "DELEGATE(e)")
+        (sequence "|" "CANCELED(c@/!)")))
+
+(setq org-tag-alist '(("@work" . ?w)
+                      ("@home" . ?h)
+                      ("family" . ?f)))
 
 (provide 'org-custom)
 
