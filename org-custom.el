@@ -11,8 +11,6 @@
 
 ;;; Code:
 
-(setq org-agenda-files '("~/Dropbox/notes/todo.org"))
-
 (require-package 'general)
 (general-def org-mode-map
   "C-c p" 'org-previous-visible-heading
@@ -28,13 +26,17 @@
 
 (setq org-M-RET-may-split-line '((headline) (default . t)))
 
+(setq org-directory "~/Dropbox/notes")
+(setq org-agenda-files '("~/Dropbox/notes/gtd.org"))
+(setq org-default-notes-file (concat org-directory "/journal.org"))
+
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DELEGATE(e)" "DONE(d)")
-        (sequence "BUGS(b)" "|" "FIXED(f)" "DELEGATE(e)")
         (sequence "|" "CANCELED(c@/!)")))
 
-(setq org-tag-alist '(("@work" . ?w)
-                      ("@home" . ?h)
+(setq org-tag-alist '(("office" . ?o)
+                      ("home" . ?h)
+                      ("call" . ?c)
                       ("family" . ?f)))
 
 (provide 'org-custom)
