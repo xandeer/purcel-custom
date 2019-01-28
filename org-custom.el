@@ -29,6 +29,9 @@
 (setq org-directory "~/Dropbox/notes")
 (setq org-agenda-files '("~/Dropbox/notes/gtd.org"))
 (setq org-default-notes-file (concat org-directory "/journal.org"))
+(setq org-refile-targets '((nil :maxlevel . 5)
+                           ("someday.org" :maxlevel . 5)
+                           (org-agenda-files :maxlevel . 5)))
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DELEGATE(e)" "DONE(d)")
