@@ -42,6 +42,15 @@
                       ("call" . ?c)
                       ("family" . ?f)))
 
+(defun org-custom-archive-done-tasks ()
+  "Archive finished tasks."
+  (interactive)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (outline-previous-heading)))
+   "/DONE" 'tree))
+
 (provide 'org-custom)
 
 ;; Local Variables:
