@@ -29,6 +29,7 @@
 (advice-add #'end-of-buffer :after #'evil-custom-end-of-buffer-dwim)
 
 (general-imap
+  "C-d" 'delete-forward-char
   "C-a" 'beginning-of-line-text
   "C-e" 'end-of-line)
 
