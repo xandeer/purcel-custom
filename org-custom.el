@@ -46,16 +46,16 @@
                       ("family" . ?f)))
 
 (setq org-capture-templates
-      `(("t" "todo" entry (file "")  ; "" => `org-default-notes-file'
-         "* TODO %?\n%U\n" :clock-resume t)
-        ("w" "word" item (file+olp+datetree "" "Words")
+      `(("t" "todo" entry (file "gtd.org" Tasks)
+         "* TODO %?\n%U\n" :clock-resume t :prepend t)
+        ("w" "word" item (file+olp+datetree "" "Words")  ; "" => `org-default-notes-file'
          "%?" :prepend t)
         ("x" "xmind" entry (file+olp+datetree "" "XMind")
-         "* %^u-%^u\n进展：\n1. %?\n计划：\n1. \n")
+         "* %^u-%^u\n进展：\n1. %?\n计划：\n1. \n" :prepend t)
         ("d" "daily review" entry (file+olp+datetree "" "Daily Review")
          (file ".daily-review.txt") :prepend t)
         ("n" "note" entry (file "" "Cache")
-         "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
+         "* %? :NOTE:\n%U\n%a\n" :clock-resume t :prepend t)
         ))
 
 (defun org-custom-archive-done-tasks ()
