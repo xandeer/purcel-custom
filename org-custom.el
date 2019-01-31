@@ -12,6 +12,7 @@
 ;;; Code:
 
 (require-package 'general)
+
 (general-def org-mode-map
   "C-c p" 'org-previous-visible-heading
   "C-c n" 'org-next-visible-heading
@@ -31,6 +32,8 @@
 (setq org-default-notes-file (concat org-directory "/journal.org"))
 (setq org-refile-targets '((nil :maxlevel . 5)
                            ("someday.org" :maxlevel . 5)
+                           ("journal.org" :maxlevel . 5)
+                           ("notes.org" :maxlevel . 5)
                            (org-agenda-files :maxlevel . 5)))
 
 (setq org-todo-keywords
@@ -41,6 +44,17 @@
                       ("home" . ?h)
                       ("call" . ?c)
                       ("family" . ?f)))
+
+(setq org-capture-templates
+      `(("t" "todo" entry (file "")  ; "" => `org-default-notes-file'
+         "* TODO %?\n%U\n" :clock-resume t)
+        ("w" "word" item (file+olp+datetree "" "Words")
+         "%?" :prepend t)
+        ("x" "xmind" entry (file+olp "" "XMind")
+         "* %<%Y>\n** %<%B>\n*** %^u-%^u\n进展：\n1. %?\n计划：\n1. \n")
+        ("n" "note" entry (file "" "Cache")
+         "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
+        ))
 
 (defun org-custom-archive-done-tasks ()
   "Archive finished tasks."
