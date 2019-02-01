@@ -46,17 +46,30 @@
                       ("family" . ?f)))
 
 (setq org-capture-templates
-      `(("t" "todo" entry (file "gtd.org" Tasks)
+      `(("t" "todo" entry (file+headline "gtd.org" "Tasks")
          "* TODO %?\n%U\n" :clock-resume t :prepend t)
-        ("w" "word" item (file+olp+datetree "" "Words")  ; "" => `org-default-notes-file'
+        ("i" "Do It Tomorrow" entry (file+headline "gtd.org" "Tasks")
+         "* TODO %?\n%(org-custom-scheduled-tomorrow)\n%U\n"
+         :clock-resume t :prepend t)
+        ("s" "Someday" entry (file+headline+datetree "someday.org" "Ideas")
+         "* %?\n%U\n" :prepend t)
+        ("w" "word" item (file+headline+datetree "" "Words")  ; "" => `org-default-notes-file'
          "%?" :prepend t)
-        ("x" "xmind" entry (file+olp+datetree "" "XMind")
+        ("x" "xmind" entry (file+headline+datetree "" "XMind")
          "* %^u-%^u\n进展：\n1. %?\n计划：\n1. \n" :prepend t)
         ("d" "daily review" entry (file+olp+datetree "" "Daily Review")
          (file ".daily-review.txt") :prepend t)
         ("n" "note" entry (file "" "Cache")
          "* %? :NOTE:\n%U\n%a\n" :clock-resume t :prepend t)
         ))
+
+(setq org-reverse-note-order t)
+(setq org-archive-reversed-order t)
+
+(defun org-custom-scheduled-tomorrow ()
+  "Return scheduled string on tomorrow."
+  (format-time-string "SCHEDULED: <%F %a>"
+                      (time-add (current-time) (* 24 3600))))
 
 (defun org-custom-archive-done-tasks ()
   "Archive finished tasks."
