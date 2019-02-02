@@ -51,7 +51,7 @@
         ("i" "Do It Tomorrow" entry (file+headline "gtd.org" "Tasks")
          "* TODO %?\n%(org-custom-scheduled-tomorrow)\n%U\n"
          :clock-resume t :prepend t)
-        ("s" "Someday" entry (file+olp+datetree "someday.org" "Ideas")
+        ("s" "Someday" entry (file+headline "someday.org" "Ideas")
          "* %?\n%U\n" :prepend t)
         ("w" "word" item (file+olp+datetree "" "Words")  ; "" => `org-default-notes-file'
          "%?" :prepend t)
@@ -59,7 +59,7 @@
          "* %^u-%^u\n进展：\n1. %?\n计划：\n1. \n" :prepend t)
         ("d" "daily review" entry (file+olp+datetree "" "Daily Review")
          (file ".daily-review.txt") :prepend t)
-        ("n" "note" entry (file "" "Cache")
+        ("n" "note" entry (file+headline "" "Cache")
          "* %? :NOTE:\n%U\n%a\n" :clock-resume t :prepend t)
         ))
 
