@@ -34,6 +34,8 @@
  "M-;" 'shell-command
  "s-;" 'comment-line)
 
+(setq tab-width 2)
+
 (require 'style-custom)
 (require 'evil-custom)
 (require 'yasnippet-custom)
@@ -44,6 +46,7 @@
 
 (require 'js-custom)
 (require 'kotlin-custom)
+(require 'vue-custom)
 
 (provide 'purcell-custom)
 
