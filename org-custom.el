@@ -61,6 +61,8 @@
          (file ".daily-review.txt") :prepend t)
         ("n" "note" entry (file+headline "" "Cache")
          "* %? :NOTE:\n%U\n%a\n" :clock-resume t :prepend t)
+        ("b" "books want to read" checkitem (file+headline "someday.org" "Books Want to Read")
+         "%? %U" :prepend t)
         ))
 
 (setq org-reverse-note-order t)
