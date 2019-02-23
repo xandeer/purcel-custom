@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: docblock
+# key: /**
+# --
+/**
+ * ${1:name} - ${2:short description}
+ * @param ${3:param}: $4
+ */$0
