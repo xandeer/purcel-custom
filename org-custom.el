@@ -61,6 +61,8 @@
          "* %^u-%^u\n进展：\n1. %?\n计划：\n1. \n" :prepend t)
         ("D" "daily review" entry (file+olp+datetree "" "Daily Review")
          (file ".daily-review.txt") :prepend t)
+        ("W" "weekly review" entry (file+olp+datetree "" "Weekly Review")
+         (file ".weekly-review.txt") :prepend t :tree-type week)
         ("b" "books want to read" item (file+olp "someday.org" "Books" "Want to Read")
          "1. %? %U" :prepend t)
         ("f" "films want to watch" item (file+olp "someday.org" "Films" "Want to Watch")
