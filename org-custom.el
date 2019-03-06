@@ -33,6 +33,10 @@
 (setq org-refile-targets '((nil :maxlevel . 5)
                            ("someday.org" :maxlevel . 5)
                            ("journal.org" :maxlevel . 5)
+                           ("diary.org" :maxlevel . 5)
+                           ("learning.org" :maxlevel . 5)
+                           ("reading.org" :maxlevel . 5)
+                           ("xmind.org" :maxlevel . 5)
                            ("notes.org" :maxlevel . 5)
                            (org-agenda-files :maxlevel . 5)))
 
@@ -53,15 +57,15 @@
         ("d" "Do It Tomorrow" entry (file+headline "gtd.org" "Tasks")
          "* TODO %?\n%(org-custom-scheduled-tomorrow)\n%U\n"
          :clock-resume t :prepend t)
-        ("w" "word" item (file+olp+datetree "" "Words") ; "" => `org-default-notes-file'
+        ("w" "word" item (file+olp+datetree "learning.org" "Words") ; "" => `org-default-notes-file'
          "%?" :prepend t)
-        ("S" "sentences" item (file+headline "" "Sentences")
+        ("S" "sentences" item (file+headline "learning.org" "Sentences")
          "%? %U" :prepend t)
-        ("x" "xmind" entry (file+olp+datetree "" "XMind")
+        ("x" "xmind" entry (file+olp+datetree "xmind.org" "Weekly Summaries")
          "* %^u-%^u\n进展：\n1. %?\n计划：\n1. \n" :prepend t)
-        ("D" "daily review" entry (file+olp+datetree "" "Daily Review")
+        ("D" "daily review" entry (file+olp+datetree "diary.org" "Daily Review")
          (file ".daily-review.txt") :prepend t)
-        ("W" "weekly review" entry (file+olp+datetree "" "Weekly Review")
+        ("W" "weekly review" entry (file+olp+datetree "diary.org" "Weekly Review")
          (file ".weekly-review.txt") :prepend t :tree-type week)
         ("b" "books want to read" item (file+olp "someday.org" "Books" "Want to Read")
          "1. %? %U" :prepend t)
