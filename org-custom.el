@@ -52,12 +52,12 @@
 (setq org-capture-templates
       `(("t" "todo" entry (file+headline "gtd.org" "Tasks")
          "* TODO %?\n%U\n" :clock-resume t :prepend t)
-        ("c" "cache" entry (file+headline "" "Cache")
+        ("c" "cache" entry (file+headline "" "Cache") ; "" => `org-default-notes-file'
          "* %? %U" :prepend t)
         ("d" "Do It Tomorrow" entry (file+headline "gtd.org" "Tasks")
          "* TODO %?\n%(org-custom-scheduled-tomorrow)\n%U\n"
          :clock-resume t :prepend t)
-        ("w" "word" item (file+olp+datetree "learning.org" "Words") ; "" => `org-default-notes-file'
+        ("w" "word" item (file+olp+datetree "learning.org" "Words")
          "%?" :prepend t)
         ("S" "sentences" item (file+headline "learning.org" "Sentences")
          "%? %U" :prepend t)
