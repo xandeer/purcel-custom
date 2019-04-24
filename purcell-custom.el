@@ -48,6 +48,8 @@
 (require 'kotlin-custom)
 (require 'vue-custom)
 
+(add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescript-mode))
+
 (provide 'purcell-custom)
 
 ;; Local Variables:
