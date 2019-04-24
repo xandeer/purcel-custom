@@ -63,7 +63,7 @@
          "%? %U" :prepend t)
         ("x" "xmind" entry (file+olp+datetree "xmind.org" "Weekly Summaries")
          "* %^u-%^u\n进展：\n1. %?\n计划：\n1. \n" :prepend t)
-        ("D" "daily review" entry (file+olp+datetree "diary.org" "Daily Review")
+        ("d" "daily review" entry (file+olp+datetree "diary.org" "Daily Review")
          (file ".daily-review.txt") :prepend t)
         ("W" "weekly review" entry (file+olp+datetree "diary.org" "Weekly Review")
          (file ".weekly-review.txt") :prepend t :tree-type week)
